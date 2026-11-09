@@ -152,11 +152,7 @@ th{background:#0a2a5e;color:#fff}
 <a class="whatsapp" href="https://wa.me/923068905860" target="_blank">WhatsApp</a>
 
 <script>
-let defaultStudents = {
-"SCSA/001/2026":{name:"Ahmed Khan",course:"COA - Certificate in Office Automation (1 Month)",date:"01 Jan 2026"},
-"SCSA/002/2026":{name:"Ayesha Bibi",course:"CCA - Certificate in Computer Applications (2 Months)",date:"01 Feb 2026"},
-"SCSA/003/2026":{name:"Muhammad Ali",course:"DCA - Diploma in Computer Applications (3 Months)",date:"01 Mar 2026"}
-};
+let defaultStudents = {};
 function getAllStudents(){
   let saved = JSON.parse(localStorage.getItem('scsa_students') || '{}');
   return {...defaultStudents, ...saved};
