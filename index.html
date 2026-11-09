@@ -83,7 +83,7 @@ th{background:#0a2a5e;color:#fff}
 <h2>Our Courses</h2>
 <div class="course"><b>COA - Certificate in Office Automation</b><br>Duration: 01 Month |<br>Typing, MS Word, Excel & PowerPoint,</div>
 <div class="course"><b>CCA - Certificate in Computer Applications</b><br>Duration: 02 Months |<br>Typing, Basic Knowledge of Computer, MS Office</div>
-<div class="course"><b>DCA - Diploma in Computer Applications</b><br>Duration: 03 Months |<br>Typing, Basic Knowledge of Computer, MS Office, Software & Harware Installation</div>
+<div class="course"><b>DCA - Diploma in Computer Applications</b><br>Duration: 03 Months |<br>Typing, Basic Knowledge of Computer, MS Office, Software & Hardware Installation</div>
 <div class="course"><b>Basic Typing Course</b><br>Duration: 1 Month | <br>English & Urdu Typing, Speed Practice</div>
 <div class="course"><b>Typing Skill Course</b><br>Duration: 2 Months | <br>Advanced Typing Speed, Professional Practice</div>
 </div>
@@ -138,7 +138,7 @@ th{background:#0a2a5e;color:#fff}
 <div id="tab-contact" class="tab-page hidden">
 <div class="card">
 <h2>Contact Us</h2>
-<p><b>Address:</b> Qila Padhar, Barnala, District Bhimber, Azad Kashmir Pakistan</p>
+<p><b>Address:</b> Qila Padhar, P/O & Tehsil Barnala, District Bhimber, Azad Kashmir Pakistan Post Code 10020</p>
 <p><b>Call 1:</b> +92 355 6499048</p>
 <p><b>Call 2:</b> +92 347 9951191</p>
 <p><b>Timing:</b> Saturday - Thursday | 9 AM - 5 PM</p>
@@ -151,12 +151,6 @@ th{background:#0a2a5e;color:#fff}
 <div class="footer">© 2026 Smart Computer Science Academy, Barnala. All Rights Reserved.</div>
 <a class="whatsapp" href="https://wa.me/923068905860" target="_blank">WhatsApp</a>
 
-<script>
-let defaultStudents = {
-"SCSA/001/2026":{name:"Ahmed Khan",course:"COA - Certificate in Office Automation (1 Month)",date:"01 Jan 2026"},
-"SCSA/002/2026":{name:"Ayesha Bibi",course:"CCA - Certificate in Computer Applications (2 Months)",date:"01 Feb 2026"},
-"SCSA/003/2026":{name:"Muhammad Ali",course:"DCA - Diploma in Computer Applications (3 Months)",date:"01 Mar 2026"}
-};
 function getAllStudents(){
   let saved = JSON.parse(localStorage.getItem('scsa_students') || '{}');
   return {...defaultStudents, ...saved};
@@ -174,13 +168,13 @@ function verifyCert(){
   let all = getAllStudents();
   let r = document.getElementById('verifyResult');
   if(all[no]){
-    r.innerHTML = `<div class="success"><b>VERIFIED</b><br><br><b>Name:</b> ${all[no].name}<br><b>Course:</b> ${all[no].course}<br><b>Date:</b> ${all[no].date}<br><br>This certificate was issued by Smart Computer Science Academy, Barnala.</div>`;
+    r.innerHTML = `<div class="success"><b>VERIFIED</b><br><br><b>Name:</b> ${all[no].name}<br><b>Course:</b> ${all[no].course}<br><b>Issue Date:</b> ${all[no].date}<br><br>This certificate was issued by Smart Computer Science Academy, Barnala.</div>`;
   } else {
     r.innerHTML = `<div class="error"><b>NOT FOUND</b><br>Certificate Number ${no} is not valid. Please check number or contact Academy.</div>`;
   }
 }
 function adminLogin(){
-  if(document.getElementById('adminPass').value === 'Admin123'){
+  if(document.getElementById('adminPass').value === 'Admin123@'){
     document.getElementById('loginBox').classList.add('hidden');
     document.getElementById('adminPanel').classList.remove('hidden');
     renderTable();
