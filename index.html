@@ -3,167 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Computer Science Academy</title>
+<title>Smart Computer Science Academy, Barnala</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f4f6fb;color:#222}
-header{background:#0b2a5b;color:#fff;padding:12px 15px;display:flex;align-items:center;gap:12px}
-header img{width:56px;height:56px;border-radius:50%;background:#fff;object-fit:cover}
-header h1{font-size:20px}
-header p{font-size:12px;color:#ffcc00}
-nav{background:#fff;display:flex;justify-content:space-around;padding:10px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-nav button{border:none;background:none;font-weight:700;font-size:14px;color:#0b2a5b;cursor:pointer;padding:6px 10px}
-nav button.active{color:#fff;background:#0b2a5b;border-radius:20px}
-section{display:none;padding:18px;max-width:900px;margin:auto}
-section.active{display:block}
-.hero{background:linear-gradient(135deg,#0b2a5b,#1a5cff);color:#fff;padding:25px 20px;border-radius:15px;text-align:center}
-.hero h2{font-size:24px;margin-bottom:8px}
-.btn{display:inline-block;margin-top:15px;background:#ffcc00;color:#000;font-weight:800;padding:11px 20px;border-radius:25px;text-decoration:none}
-.card{background:#fff;padding:16px;border-radius:12px;margin-top:14px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.card h3{color:#0b2a5b;margin-bottom:6px}
-.card p{font-size:14px;line-height:1.6;color:#444}
-.card ul{margin:10px 0 0 18px;font-size:14px;line-height:1.7;color:#444}
-.badge{display:inline-block;background:#e8f0ff;color:#0b2a5b;font-weight:800;font-size:13px;padding:5px 10px;border-radius:20px;margin-bottom:8px}
-.principal{display:flex;gap:14px;align-items:center}
-.principal img{width:95px;height:95px;border-radius:50%;object-fit:cover;border:3px solid #ffcc00}
-input{width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;margin-top:10px;font-size:16px}
-button.main{width:100%;padding:13px;background:#0b2a5b;color:#fff;border:none;border-radius:10px;font-weight:800;margin-top:12px;font-size:16px;cursor:pointer}
-.result{margin-top:14px;padding:14px;border-radius:10px;display:none}
-.result.ok{background:#e6ffef;border:1px solid #0a9d4d}
-.result.bad{background:#ffe8e8;border:1px solid red}
-footer{text-align:center;padding:20px;font-size:13px;color:#777}
-.wa{position:fixed;bottom:20px;right:18px;background:#25D366;color:#fff;padding:13px 18px;border-radius:30px;text-decoration:none;font-weight:800}
+body{background:#eef2f7;color:#222}
+header{background:#0a2a5e;color:#fff;padding:12px 15px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+header img{width:55px;height:55px;border-radius:50%;background:#fff;object-fit:cover}
+header h1{font-size:18px;line-height:1.2}
+header p{font-size:12px;opacity:.9}
+nav{background:#fff;display:flex;justify-content:space-around;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:79px;z-index:99}
+nav button{flex:1;background:none;border:none;padding:13px 2px;font-size:13px;font-weight:700;cursor:pointer;color:#0a2a5e;border-bottom:3px solid transparent}
+nav button.active{border-bottom:3px solid #f5b301;color:#000}
+.container{max-width:900px;margin:auto;padding:15px}
+.card{background:#fff;border-radius:14px;padding:18px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+h2{color:#0a2a5e;margin-bottom:10px;font-size:20px}
+h3{margin:10px 0 5px;color:#0a2a5e}
+p{line-height:1.6;font-size:14px}
+.principal{display:flex;gap:15px;align-items:center}
+.principal img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid #f5b301}
+.badge{display:inline-block;background:#f5b301;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700;margin-top:5px}
+.course{border:1px solid #e5e5e5;border-radius:10px;padding:12px;margin-bottom:10px}
+.course b{color:#0a2a5e}
+input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:7px 0;font-size:15px}
+.btn{width:100%;background:#0a2a5e;color:#fff;border:none;padding:13px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-yellow{background:#f5b301;color:#000}
+.success{background:#d4edda;border:1px solid #28a745;padding:14px;border-radius:10px;margin-top:12px}
+.error{background:#f8d7da;border:1px solid #dc3545;padding:14px;border-radius:10px;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#0a2a5e;color:#fff}
+.small-btn{padding:5px 8px;border:none;border-radius:6px;cursor:pointer;font-size:12px;margin:2px}
+.edit{background:#ffc107}.del{background:#dc3545;color:#fff}
+.hidden{display:none}
+.footer{text-align:center;padding:15px;font-size:12px;color:#666}
+.whatsapp{position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;padding:12px 16px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.2)}
 </style>
 </head>
 <body>
 
 <header>
-<img src="logo.jpg" alt="Logo">
-<div><h1>Smart Computer Science Academy</h1><p>Qila Padhar Barnala Azad Kashmir Pakistan</p></div>
+<img src="logo.jpg" alt="Logo" onerror="this.style.display='none'">
+<div><h1>Smart Computer Science Academy</h1><p>Barnala, District Bhimber, Azad Kashmir</p></div>
 </header>
 
 <nav>
-<button class="active" onclick="show('home',this)">Home</button>
-<button onclick="show('courses',this)">Courses</button>
-<button onclick="show('verify',this)">Verify</button>
-<button onclick="show('contact',this)">Contact</button>
+<button onclick="showTab('home',this)" class="active">Home</button>
+<button onclick="showTab('courses',this)">Courses</button>
+<button onclick="showTab('verify',this)">Verify</button>
+<button onclick="showTab('admin',this)">Admin</button>
+<button onclick="showTab('contact',this)">Contact</button>
 </nav>
 
-<section id="home" class="active">
-<div class="hero">
-<h2>Admissions Open 2026</h2>
-<p>Short Computer Courses - Learn Computer Skills For A Better Future.</p>
-<a class="btn" href="#" onclick="show('courses',document.querySelectorAll('nav button')[1]);return false;">View Courses</a>
+<div class="container">
+
+<!-- HOME -->
+<div id="home" class="card">
+<h2>Welcome to Smart Computer Science Academy</h2>
+<p>Learn Computer Skills for a Bright Future. Practical Training, Certified Courses, Expert Teachers.</p>
+<div class="principal" style="margin-top:15px">
+<img src="principal.jpg" alt="Principal">
+<div>
+<h3>Muhammad Parvez</h3>
+<p>Principal & Founder</p>
+<span class="badge">20+ Years Experience</span>
+<p style="margin-top:8px">Our mission is to provide quality computer education in Barnala at affordable fees.</p>
+</div>
+</div>
+<h3 style="margin-top:15px">Why Choose Us?</h3>
+<p>✅ Govt. Recognized Certificates<br>✅ 100% Practical Classes<br>✅ Separate Classes for Boys & Girls<br>✅ Low Fees - Easy Monthly Installments</p>
 </div>
 
-<div class="card principal">
-<img src="principal.jpg" alt="Muhammad Parvez">
-<div><h3>Principal's Message</h3><p><b>Muhammad Parvez</b><br>Our goal is to provide quality computer education to every student in Barnala with practical training.</p></div>
+<!-- COURSES -->
+<div id="courses" class="card hidden">
+<h2>Our Courses</h2>
+<div class="course"><b>COA - Certificate in Office Automation</b><br>Duration: 3 Months | Fees: Rs. 6,000<br>MS Word, Excel, PowerPoint, Internet, Typing</div>
+<div class="course"><b>CCA - Certificate in Computer Applications</b><br>Duration: 6 Months | Fees: Rs. 12,000<br>Office + Photoshop + Internet + Hardware Basics</div>
+<div class="course"><b>DCA - Diploma in Computer Applications</b><br>Duration: 12 Months | Fees: Rs. 24,000<br>Complete Diploma - Office, Graphics, Web, Database</div>
+<div class="course"><b>Graphics Designing</b><br>Duration: 3 Months | Fees: Rs. 9,000<br>Photoshop, Illustrator, Canva, Social Media Design</div>
+<div class="course"><b>Web Development</b><br>Duration: 6 Months | Fees: Rs. 18,000<br>HTML, CSS, JavaScript, WordPress</div>
 </div>
 
-<div class="card"><h3>Why Smart Academy?</h3><p>100% Practical Classes<br>Expert Teachers<br>Online Certificate Verification</p></div>
-</section>
-
-<section id="courses">
-<h2 style="color:#0b2a5b;margin-bottom:5px;">Short Computer Courses</h2>
-
-<div class="card">
-<span class="badge">1 Month</span>
-<h3>Certificate in Office Automation (COA)</h3>
-<p><b>Course Details:</b></p>
-<ul>
-<li>Typing</li>
-<li>Basic Knowledge of Computer</li>
-<li>Windows Hardware & Software</li>
-<li>MS Word Excel PowerPoint</li>
-</ul>
-<button class="main" onclick="enroll('COA - 1 Month')">Enroll Now</button>
+<!-- VERIFY -->
+<div id="verify" class="card hidden">
+<h2>Verify Certificate</h2>
+<p>Enter your Certificate Number. Example: SCSA-001</p>
+<input type="text" id="verifyInput" placeholder="SCSA-001">
+<button class="btn" onclick="verifyCert()">Verify</button>
+<div id="verifyResult"></div>
 </div>
 
-<div class="card">
-<span class="badge">2 Months</span>
-<h3>Certificate in Computer Applications (CCA)</h3>
-<p><b>Course Details:</b></p>
-<ul>
-<li>Typing</li>
-<li>Basic Knowledge of Computer</li>
-<li>Windows, Hardware & Software</li>
-<li>Word, Excel & PowerPoint</li>
-<li>Urdu Software InPage</li>
-<li>Create & Send / Receive Email</li>
-<li>Usage of Internet</li>
-</ul>
-<button class="main" onclick="enroll('CCA - 2 Months')">Enroll Now</button>
+<!-- ADMIN -->
+<div id="admin" class="card hidden">
+<h2>Admin - Upload Student Data</h2>
+
+<div id="loginBox">
+<p>Enter Admin Password to Continue</p>
+<input type="password" id="adminPass" placeholder="Enter Password">
+<button class="btn" onclick="adminLogin()">Login</button>
+<p style="font-size:12px;color:#888;margin-top:8px">Default Password: admin123</p>
 </div>
 
-<div class="card">
-<span class="badge">3 Months</span>
-<h3>Diploma in Computer Applications (DCA)</h3>
-<p><b>Course Details:</b></p>
-<ul>
-<li>Typing</li>
-<li>Basic Knowledge of Computer</li>
-<li>Windows, Hardware & Software</li>
-<li>Word, Excel & PowerPoint</li>
-<li>Urdu Software InPage</li>
-<li>Create & Send / Receive Email</li>
-<li>Usage of Internet</li>
-<li>Software & Hardware Installation</li>
-</ul>
-<button class="main" onclick="enroll('DCA - 3 Months')">Enroll Now</button>
+<div id="adminPanel" class="hidden">
+<p style="color:green;font-weight:700">✅ Logged In As Admin</p>
+<label>Certificate Number</label>
+<input type="text" id="certNo" placeholder="Example: SCSA-004">
+<label>Student Name</label>
+<input type="text" id="stuName" placeholder="Example: Fatima Khan">
+<label>Course</label>
+<select id="stuCourse">
+<option value="COA - Certificate in Office Automation">COA - Certificate in Office Automation</option>
+<option value="CCA - Certificate in Computer Applications">CCA - Certificate in Computer Applications</option>
+<option value="DCA - Diploma in Computer Applications">DCA - Diploma in Computer Applications</option>
+<option value="Graphics Designing">Graphics Designing</option>
+<option value="Web Development">Web Development</option>
+</select>
+<label>Issue Date</label>
+<input type="text" id="stuDate" placeholder="Example: May 2026">
+<button class="btn btn-yellow" onclick="saveStudent()">Save Student</button>
+<button class="btn" onclick="logoutAdmin()" style="background:#666">Logout</button>
+
+<h3>Saved Students List - <span id="count"></span></h3>
+<div id="studentTable"></div>
+</div>
 </div>
 
-<div class="card"><h3>Key Benefits</h3><p>100% Practical<br>Modern Lab with Projector<br>Course Certificate<br>Experienced Instructor<br>Flexible Timing Morning / Evening</p></div>
-</section>
-
-<section id="verify">
-<div class="card"><h3>Verify Certificate</h3><p>Enter your Certificate Number. Example: SCSA-001</p>
-<input id="certNo" placeholder="Enter Certificate Number">
-<button class="main" onclick="verifyCert()">Verify</button>
-<div id="verifyResult" class="result"></div>
+<!-- CONTACT -->
+<div id="contact" class="card hidden">
+<h2>Contact Us</h2>
+<p><b>Address:</b> Main Bazaar, Qila Padhar, Barnala, District Bhimber, Azad Kashmir</p>
+<p><b>WhatsApp / Call:</b> +92 355 6499048</p>
+<p><b>Principal:</b> Muhammad Parvez</p>
+<p><b>Timing:</b> Mon - Sat | 9 AM - 5 PM</p>
+<a href="https://wa.me/923556499048" target="_blank"><button class="btn" style="background:#25D366">Chat on WhatsApp</button></a>
 </div>
-</section>
 
-<section id="contact">
-<div class="card"><h3>Contact Us</h3>
-<p><b>Smart Computer Science Academy</b><br>Qila Padhar Barnala Azad Kashmir Pakistan<br>Near Break Bite Pizza<br><br>
-<b>Mobile:</b> +92 355 6499048<br>
-<b>Mobile:</b> +92 347 9951191<br>
-<b>WhatsApp:</b> +92 306 8905860<br>
-<b>Email:</b> smartcomp812@gmail.com</p>
-<a class="btn" href="https://wa.me/923068905860?text=Hello%20Sir,%20I%20Want%20Admission">Message on WhatsApp</a>
 </div>
-</section>
 
-<footer>© 2026 Smart Computer Science Academy<br>Qila Padhar Barnala Azad Kashmir Pakistan</footer>
-<a class="wa" href="https://wa.me/923068905860">WhatsApp</a>
+<div class="footer">© 2026 Smart Computer Science Academy, Barnala. All Rights Reserved.</div>
+<a class="whatsapp" href="https://wa.me/923556499048" target="_blank">WhatsApp</a>
 
 <script>
-function show(id,btn){
-document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
-if(btn) btn.classList.add('active');
-}
-const students = {
+// DEFAULT STUDENTS
+let defaultStudents = {
 "SCSA-001":{name:"Ahmed Khan",course:"COA - Certificate in Office Automation",date:"Jan 2026"},
 "SCSA-002":{name:"Ayesha Bibi",course:"CCA - Certificate in Computer Applications",date:"Feb 2026"},
 "SCSA-003":{name:"Muhammad Ali",course:"DCA - Diploma in Computer Applications",date:"Mar 2026"}
 };
+function getAllStudents(){
+  let saved = JSON.parse(localStorage.getItem('scsa_students') || '{}');
+  return {...defaultStudents, ...saved};
+}
+function showTab(id,btn){
+  document.querySelectorAll('.container > div').forEach(d=>d.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  if(id==='admin') renderTable();
+}
 function verifyCert(){
-let n=document.getElementById('certNo').value.trim().toUpperCase();
-let box=document.getElementById('verifyResult');
-box.style.display='block';
-if(students[n]){
-box.className='result ok';
-box.innerHTML=`<b>VERIFIED</b><br><br><b>Name:</b> ${students[n].name}<br><b>Course:</b> ${students[n].course}<br><b>Date:</b> ${students[n].date}<br><br>This certificate was issued by Smart Computer Science Academy, Barnala.`;
-}else{
-box.className='result bad';
-box.innerHTML=`<b>NOT FOUND</b><br>This number is not found in our records. Please check the number or contact the academy.`;
+  let no = document.getElementById('verifyInput').value.trim().toUpperCase();
+  let all = getAllStudents();
+  let r = document.getElementById('verifyResult');
+  if(all[no]){
+    r.innerHTML = `<div class="success"><b>VERIFIED</b><br><br><b>Name:</b> ${all[no].name}<br><b>Course:</b> ${all[no].course}<br><b>Date:</b> ${all[no].date}<br><br>This certificate was issued by Smart Computer Science Academy, Barnala.</div>`;
+  } else {
+    r.innerHTML = `<div class="error"><b>NOT FOUND</b><br>Certificate Number ${no} is not valid. Please check number or contact Academy.</div>`;
+  }
 }
+let editKey = "";
+function adminLogin(){
+  if(document.getElementById('adminPass').value === 'admin123'){
+    document.getElementById('loginBox').classList.add('hidden');
+    document.getElementById('adminPanel').classList.remove('hidden');
+    renderTable();
+  } else { alert('Wrong Password!'); }
 }
-function enroll(c){
-window.location.href="https://wa.me/923068905860?text=Hello%20Sir,%20I%20Want%20Admission%20in%20"+c;
+function logoutAdmin(){
+  document.getElementById('adminPanel').classList.add('hidden');
+  document.getElementById('loginBox').classList.remove('hidden');
+  document.getElementById('adminPass').value='';
+}
+function saveStudent(){
+  let no = document.getElementById('certNo').value.trim().toUpperCase();
+  let name = document.getElementById('stuName').value.trim();
+  let course = document.getElementById('stuCourse').value;
+  let date = document.getElementById('stuDate').value.trim();
+  if(!no || !name || !date){ alert('Please fill all fields!'); return; }
+  let saved = JSON.parse(localStorage.getItem('scsa_students') || '{}');
+  saved[no] = {name:name, course:course, date:date};
+  localStorage.setItem('scsa_students', JSON.stringify(saved));
+  alert('Student Saved Successfully! Now Verify will show this student.');
+  document.getElementById('certNo').value=''; document.getElementById('stuName').value=''; document.getElementById('stuDate').value='';
+  editKey='';
+  renderTable();
+}
+function renderTable(){
+  let all = getAllStudents();
+  let keys = Object.keys(all);
+  document.getElementById('count').innerText = keys.length + ' Students';
+  let html = '<table><tr><th>Cert No</th><th>Name</th><th>Course</th><th>Date</th><th>Action</th></tr>';
+  keys.forEach(k=>{
+    html += `<tr><td>${k}</td><td>${all[k].name}</td><td>${all[k].course}</td><td>${all[k].date}</td><td><button class="small-btn edit" onclick="editStudent('${k}')">Edit</button><button class="small-btn del" onclick="deleteStudent('${k}')">Delete</button></td></tr>`;
+  });
+  html += '</table>';
+  document.getElementById('studentTable').innerHTML = html;
+}
+function editStudent(k){
+  let all = getAllStudents();
+  document.getElementById('certNo').value=k;
+  document.getElementById('stuName').value=all[k].name;
+  document.getElementById('stuCourse').value=all[k].course;
+  document.getElementById('stuDate').value=all[k].date;
+  window.scrollTo(0,0);
+  alert('Now edit fields and click Save Student again.');
+}
+function deleteStudent(k){
+  if(!confirm('Delete '+k+' ?')) return;
+  let saved = JSON.parse(localStorage.getItem('scsa_students') || '{}');
+  if(saved[k]){ delete saved[k]; localStorage.setItem('scsa_students', JSON.stringify(saved)); }
+  else { delete defaultStudents[k]; }
+  renderTable();
+  alert('Deleted');
 }
 </script>
 </body>
