@@ -34,7 +34,7 @@ th,td{border:1px solid #ddd;padding:8px;text-align:left}
 th{background:#0a2a5e;color:#fff}
 .small-btn{padding:5px 8px;border:none;border-radius:6px;cursor:pointer;font-size:12px;margin:2px}
 .edit{background:#ffc107}.del{background:#dc3545;color:#fff}
-.hidden{display:none}
+.hidden{display:none !important}
 .footer{text-align:center;padding:15px;font-size:12px;color:#666}
 .whatsapp{position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;padding:12px 16px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.2)}
 .section-title{background:#0a2a5e;color:#fff;padding:10px 14px;border-radius:10px;margin:18px 0 10px;font-size:17px}
@@ -49,15 +49,16 @@ th{background:#0a2a5e;color:#fff}
 </header>
 
 <nav>
-<button onclick="showTab('home',this)" class="active">Home</button>
-<button onclick="showTab('courses',this)">Courses</button>
-<button onclick="showTab('verifyAdminContact',this)">Verify - Admin - Contact</button>
+<button onclick="showTab('tab-home',this)" class="active">Home</button>
+<button onclick="showTab('tab-courses',this)">Courses</button>
+<button onclick="showTab('tab-vac',this)">Verify - Admin - Contact</button>
 </nav>
 
 <div class="container">
 
-<!-- HOME -->
-<div id="home" class="card">
+<!-- TAB 1 : HOME ONLY -->
+<div id="tab-home" class="tab-page">
+<div class="card">
 <h2>Welcome to Smart Computer Science Academy</h2>
 <p>Learn Computer Skills for a Bright Future. Practical Training, Latest Courses, Experienced Teachers.</p>
 <div class="principal" style="margin-top:15px">
@@ -72,9 +73,11 @@ th{background:#0a2a5e;color:#fff}
 <h3 style="margin-top:15px">Why Choose Us?</h3>
 <p>✅ Certificates<br>✅ 100% Practical Training<br>✅ Separate Classes for Boys & Girls<br>✅ Low Fees<br>✅ Modern Lab with Projector<br>✅ Flexible Timings Morning / Evening</p>
 </div>
+</div>
 
-<!-- COURSES -->
-<div id="courses" class="card hidden">
+<!-- TAB 2 : COURSES ONLY -->
+<div id="tab-courses" class="tab-page hidden">
+<div class="card">
 <h2>Our Courses</h2>
 <div class="course"><b>COA - Certificate in Office Automation</b><br>Duration: 01 Month | Fees: Rs. 7,000<br>MS Word, Excel, PowerPoint, Internet, Typing</div>
 <div class="course"><b>CCA - Certificate in Computer Applications</b><br>Duration: 02 Months | Fees: Rs. 18,000<br>Office + Photoshop + Internet + Hardware Basics</div>
@@ -82,9 +85,10 @@ th{background:#0a2a5e;color:#fff}
 <div class="course"><b>Basic Typing Course</b><br>Duration: 1 Month | Fees: Rs. 4,000<br>English & Urdu Typing, Speed Practice</div>
 <div class="course"><b>Typing Skill Course</b><br>Duration: 2 Months | Fees: Rs. 8,000<br>Advanced Typing Speed, Professional Practice</div>
 </div>
+</div>
 
-<!-- VERIFY + ADMIN + CONTACT - ALL ON ONE PAGE -->
-<div id="verifyAdminContact" class="hidden">
+<!-- TAB 3 : VERIFY + ADMIN + CONTACT ONLY -->
+<div id="tab-vac" class="tab-page hidden">
 
 <div class="section-title">1. Verify Certificate</div>
 <div class="card">
@@ -158,13 +162,12 @@ function getAllStudents(){
   return {...defaultStudents, ...saved};
 }
 function showTab(id,btn){
-  document.getElementById('home').classList.add('hidden');
-  document.getElementById('courses').classList.add('hidden');
-  document.getElementById('verifyAdminContact').classList.add('hidden');
+  document.querySelectorAll('.tab-page').forEach(d=>d.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
   document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
-  if(id==='verifyAdminContact') renderTable();
+  if(id==='tab-vac') renderTable();
+  window.scrollTo(0,0);
 }
 function verifyCert(){
   let no = document.getElementById('verifyInput').value.trim().toUpperCase();
