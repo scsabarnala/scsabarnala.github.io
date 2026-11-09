@@ -3,236 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Computer Science Academy, Barnala</title>
+<title>Smart Computer & Photo Studio - Barnala AJK</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#eef2f7;color:#222}
-header{background:#0a2a5e;color:#fff;padding:12px 15px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
-header img{width:55px;height:55px;border-radius:50%;background:#fff;object-fit:cover}
-header h1{font-size:18px;line-height:1.2}
-header p{font-size:12px;opacity:.9}
-nav{background:#fff;display:flex;justify-content:space-around;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:79px;z-index:99}
-nav button{flex:1;background:none;border:none;padding:11px 1px;font-size:13px;font-weight:700;cursor:pointer;color:#0a2a5e;border-bottom:3px solid transparent}
-nav button.active{border-bottom:3px solid #f5b301;color:#000}
-.container{max-width:900px;margin:auto;padding:15px}
-.card{background:#fff;border-radius:14px;padding:18px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-h2{color:#0a2a5e;margin-bottom:10px;font-size:20px}
-h3{margin:10px 0 5px;color:#0a2a5e}
-p{line-height:1.6;font-size:14px}
-.principal{display:flex;gap:15px;align-items:center}
-.principal img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid #f5b301}
-.badge{display:inline-block;background:#f5b301;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700;margin-top:5px}
-.course{border:1px solid #e5e5e5;border-radius:10px;padding:12px;margin-bottom:10px}
-.course b{color:#0a2a5e}
-input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:7px 0;font-size:15px}
-.btn{width:100%;background:#0a2a5e;color:#fff;border:none;padding:13px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px}
-.btn-yellow{background:#f5b301;color:#000}
-.success{background:#d4edda;border:1px solid #28a745;padding:14px;border-radius:10px;margin-top:12px}
-.error{background:#f8d7da;border:1px solid #dc3545;padding:14px;border-radius:10px;margin-top:12px}
-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
-th,td{border:1px solid #ddd;padding:8px;text-align:left}
-th{background:#0a2a5e;color:#fff}
-.small-btn{padding:5px 8px;border:none;border-radius:6px;cursor:pointer;font-size:12px;margin:2px}
-.edit{background:#ffc107}.del{background:#dc3545;color:#fff}
-.hidden{display:none !important}
-.footer{text-align:center;padding:15px;font-size:12px;color:#666}
-.whatsapp{position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;padding:12px 16px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.2)}
-.whatsapp-line{background:#d4edda;border:1px solid #25D366;padding:10px;border-radius:10px;font-weight:700;color:#075e2e;margin:8px 0}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f0f9ff;color:#0f172a}
+header{background:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.logo-wrap img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #0e7490}
+.logo-wrap b{font-size:15px;line-height:1.1}.logo-wrap span{font-size:10px;color:#0e7490;letter-spacing:.5px}
+nav button{border:none;padding:10px 18px;border-radius:30px;font-weight:700;cursor:pointer;background:#f1f5f9;font-size:13px}
+nav button.active{background:#0e7490;color:#fff}
+.container{max-width:920px;margin:0 auto;padding:14px}
+.hero{background:linear-gradient(135deg,#082f49,#0e7490,#06b6d4);color:#fff;border-radius:20px;padding:28px 20px;text-align:center}
+.hero h1{font-size:28px;line-height:1.2}.hero h1 span{color:#fde047}
+.hero p{font-size:13px;opacity:.9;margin:10px auto;max-width:580px}
+.btn{padding:12px 22px;border:none;border-radius:30px;font-weight:700;cursor:pointer;font-size:13px;display:inline-block}
+.btn-yellow{background:#fde047;color:#111}.btn-white{background:#fff;color:#0e7490}
+.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.badges span{background:rgba(255,255,255,.18);padding:6px 12px;border-radius:20px;font-size:11px}
+.section{margin-top:22px}.section h2{font-size:19px;margin-bottom:4px}.section p.sub{font-size:12px;color:#64748b;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.card{background:#fff;padding:18px;border-radius:16px;border:1px solid #e2e8f0}
+.card .dur{background:#ecfeff;color:#0e7490;font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;display:inline-block}
+.card h3{font-size:15px;margin:10px 0 6px}.card p{font-size:12px;color:#64748b;line-height:1.6}
+.card ul{list-style:none;margin-top:8px}.card li{font-size:12px;padding:4px 0;border-top:1px dashed #e2e8f0}
+.card li::before{content:"✓ ";color:#16a34a;font-weight:800}
+.principal{background:#fff;border-radius:18px;padding:16px;display:flex;gap:16px;align-items:center;border:1px solid #e2e8f0}
+.principal img{width:110px;height:110px;border-radius:14px;object-fit:cover}
+.principal h3{font-size:16px}.principal p{font-size:12px;color:#64748b;line-height:1.6;margin-top:4px}
+.contact{background:#082f49;color:#fff;border-radius:18px;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact h2{color:#fff;font-size:18px}.row{background:rgba(255,255,255,.08);padding:10px;border-radius:10px;margin-top:8px;display:flex;justify-content:space-between;font-size:12px}
+.form-card{background:#fff;padding:22px;border-radius:18px;border:1px solid #e2e8f0;text-align:center}
+input{width:100%;padding:14px;border-radius:12px;border:1px solid #cbd5e1;font-size:15px;text-align:center;text-transform:uppercase;margin:12px 0}
+.pdf-viewer{width:100%;height:520px;border:none;border-radius:12px;margin-top:14px}
+.hidden{display:none}
+.footer{background:#082f49;color:#94a3b8;text-align:center;padding:16px;font-size:11px;margin-top:22px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.hero h1{font-size:22px}.principal{flex-direction:column;text-align:center}.logo-wrap b{font-size:13px}}
 </style>
 </head>
 <body>
 
 <header>
-<img src="logo.jpg" alt="Logo" onerror="this.style.display='none'">
-<div><h1>Smart Computer Science Academy</h1><p>Barnala, District Bhimber, Azad Kashmir</p></div>
+<div class="logo-wrap">
+<img src="logo.jpg" alt="Logo" onerror="this.src='https://via.placeholder.com/52'">
+<div><b>Smart Computer &<br>Photo Studio</b><br><span>BARNALA AJK</span></div>
+</div>
+<nav>
+<button id="bHome" class="active" onclick="show('home')">Home</button>
+<button id="bVerify" onclick="show('verify')">Verify Certificate</button>
+</nav>
 </header>
 
-<nav>
-<button onclick="showTab('tab-home',this)" class="active">Home</button>
-<button onclick="showTab('tab-courses',this)">Courses</button>
-<button onclick="showTab('tab-verify',this)">Verify</button>
-<button onclick="showTab('tab-admin',this)">Admin</button>
-<button onclick="showTab('tab-contact',this)">Contact</button>
-</nav>
-
 <div class="container">
+<!-- ===== HOME ===== -->
+<div id="home">
+<div class="hero">
+<h1>Smart Computer &<br><span>Photo Studio - Barnala</span></h1>
+<p>Short Computer Courses • 100% Practical • Modern Lab with Projector • Verified Certificate</p>
+<br>
+<a class="btn btn-yellow" href="https://wa.me/923068905860?text=Assalam-o-Alaikum! Mujhe Admission Leni Hai." target="_blank">📝 Admission Lein</a>
+<button class="btn btn-white" onclick="show('verify')">✅ Verify Certificate</button>
+<div class="badges"><span>✔ 100% Practical</span><span>✔ Experienced Instructor</span><span>✔ Morning / Evening</span></div>
+</div>
 
-<!-- TAB 1 : HOME ONLY -->
-<div id="tab-home" class="tab-page">
-<div class="card">
-<h2>Welcome to Smart Computer Science Academy</h2>
-<p>Learn Computer Skills for a Bright Future. Practical Training, Latest Courses, Experienced Teachers.</p>
-<div class="principal" style="margin-top:15px">
-<img src="principal.jpg" alt="Principal">
+<div class="section">
+<h2>📚 Short Computer Courses</h2>
+<p class="sub">Admission Open - Apna course select karein</p>
+<div class="grid">
+<!-- 1 MONTH -->
+<div class="card"><span class="dur">1 MONTH</span><h3>COA - Certificate in Office Automation</h3><p>Typing, Basic Computer, Windows, MS Word, Excel, PowerPoint</p><ul><li>100% Practical</li><li>Certificate Included</li></ul></div>
+<!-- 2 MONTHS -->
+<div class="card"><span class="dur">2 MONTHS</span><h3>CCA - Certificate in Computer Applications</h3><p>COA + InPage Urdu, Email, Internet, Hardware & Software</p><ul><li>100% Practical</li><li>Certificate Included</li></ul></div>
+<!-- 3 MONTHS -->
+<div class="card"><span class="dur">3 MONTHS • DIPLOMA</span><h3>DCA - Diploma in Computer Applications</h3><p>CCA + Software & Hardware Installation - Complete Course</p><ul><li>100% Practical</li><li>Diploma Certificate</li></ul></div>
+</div>
+</div>
+
+<div class="section">
+<div class="principal">
+<img src="principal.jpg" alt="Principal" onerror="this.src='https://via.placeholder.com/110'">
+<div><h3>Principal - Muhammad Parvez</h3><p>“Hamara maqsad sirf computer sikhana nahi, balke har student ko is qabil banana hai ke wo khud apna rozgar kama sake. Yahan har student ko practical karwaya jata hai.”</p><p><b style="color:#0e7490">Smart Computer & Photo Studio, Barnala</b></p></div>
+</div>
+</div>
+
+<div class="section">
+<div class="contact">
 <div>
-<h3>Muhammad Parvez</h3>
-<p>Principal & Founder</p>
-<span class="badge">30 Years Experience</span>
-<p style="margin-top:8px">Our mission is to provide quality computer education in Barnala at affordable fees.</p>
+<h2>📞 Contact & Address</h2>
+<div class="row"><span>📱 Mobile</span><b>0347 9951191</b></div>
+<div class="row"><span>💬 WhatsApp</span><b>0306 8905860</b></div>
+<div class="row"><span>📍 Location</span><b style="text-align:right">Qila Padhar, Near Break Bite Pizza, Barnala AJK</b></div>
 </div>
+<div>
+<h2>🚀 Quick Admission</h2>
+<p style="font-size:12px;color:#cbd5e1;margin-top:8px">Button dabayein, WhatsApp khul jayega.</p>
+<a class="btn" style="background:#22c55e;color:#fff;width:100%;text-align:center;margin-top:10px" href="https://wa.me/923068905860?text=Assalam-o-Alaikum! Mujhe Admission Leni Hai." target="_blank">💬 WhatsApp Par Admission</a>
+<a class="btn" style="background:#fff;color:#0e7490;width:100%;text-align:center;margin-top:8px" href="tel:+923479951191">📞 Call Now</a>
 </div>
-<h3 style="margin-top:15px">Why Choose Us?</h3>
-<p>✅ Certificates<br>✅ 100% Practical Training<br>✅ Separate Classes for Boys & Girls<br>✅ Low Fees<br>✅ Modern Lab with Projector<br>✅ Flexible Timings Morning / Evening</p>
-</div>
-</div>
-
-<!-- TAB 2 : COURSES ONLY -->
-<div id="tab-courses" class="tab-page hidden">
-<div class="card">
-<h2>Our Courses</h2>
-<div class="course"><b>COA - Certificate in Office Automation</b><br>Duration: 01 Month | Fees: Rs. 7,000<br>MS Word, Excel, PowerPoint, Internet, Typing</div>
-<div class="course"><b>CCA - Certificate in Computer Applications</b><br>Duration: 02 Months | Fees: Rs. 18,000<br>Office + Photoshop + Internet + Hardware Basics</div>
-<div class="course"><b>DCA - Diploma in Computer Applications</b><br>Duration: 03 Months | Fees: Rs. 30,000<br>Complete Diploma - Office, Graphics, Web, Database</div>
-<div class="course"><b>Basic Typing Course</b><br>Duration: 1 Month | Fees: Rs. 4,000<br>English & Urdu Typing, Speed Practice</div>
-<div class="course"><b>Typing Skill Course</b><br>Duration: 2 Months | Fees: Rs. 8,000<br>Advanced Typing Speed, Professional Practice</div>
-</div>
-</div>
-
-<!-- TAB 3 : VERIFY ONLY -->
-<div id="tab-verify" class="tab-page hidden">
-<div class="card">
-<h2>Verify Certificate</h2>
-<p>Enter your Certificate Number. Example: SCSA/001/2026</p>
-<input type="text" id="verifyInput" placeholder="SCSA/001/2026">
-<button class="btn" onclick="verifyCert()">Verify</button>
-<div id="verifyResult"></div>
-</div>
-</div>
-
-<!-- TAB 4 : ADMIN ONLY -->
-<div id="tab-admin" class="tab-page hidden">
-<div class="card">
-<h2>Admin - Upload Student Data</h2>
-<div id="loginBox">
-<p>Enter Admin Password to Continue</p>
-<input type="password" id="adminPass" placeholder="Enter Password">
-<button class="btn" onclick="adminLogin()">Login</button>
-<p style="font-size:12px;color:#888;margin-top:8px">Default Password: Admin123</p>
-</div>
-<div id="adminPanel" class="hidden">
-<p style="color:green;font-weight:700">✅ Logged In As Admin</p>
-<label>Certificate Number</label>
-<input type="text" id="certNo" placeholder="Example: SCSA/004/2026">
-<label>Student Name</label>
-<input type="text" id="stuName" placeholder="Example: Fatima Khan">
-<label>Course</label>
-<select id="stuCourse">
-<option value="COA - Certificate in Office Automation (1 Month)">COA - Certificate in Office Automation (1 Month)</option>
-<option value="CCA - Certificate in Computer Applications (2 Months)">CCA - Certificate in Computer Applications (2 Months)</option>
-<option value="DCA - Diploma in Computer Applications (3 Months)">DCA - Diploma in Computer Applications (3 Months)</option>
-<option value="Basic Typing Course (1 Month)">Basic Typing Course (1 Month)</option>
-<option value="Typing Skill Course (2 Months)">Typing Skill Course (2 Months)</option>
-</select>
-<label>Issue Date</label>
-<input type="text" id="stuDate" placeholder="Example: 01 May 2026">
-<button class="btn btn-yellow" onclick="saveStudent()">Save Student</button>
-<button class="btn" onclick="logoutAdmin()" style="background:#666">Logout</button>
-<h3>Saved Students List - <span id="count"></span></h3>
-<div id="studentTable"></div>
 </div>
 </div>
 </div>
 
-<!-- TAB 5 : CONTACT ONLY -->
-<div id="tab-contact" class="tab-page hidden">
-<div class="card">
-<h2>Contact Us</h2>
-<p><b>Address:</b> Qila Padhar, Barnala, District Bhimber, Azad Kashmir Pakistan</p>
-<p><b>Call 1:</b> +92 355 6499048</p>
-<p><b>Call 2:</b> +92 347 9951191</p>
-<p class="whatsapp-line">WhatsApp: +92 306 8905860</p>
-<p><b>Timing:</b> Saturday - Thursday | 9 AM - 5 PM</p>
-<a href="tel:+923556499048"><button class="btn" style="background:#0a2a5e;margin-bottom:8px">📞 Call Now - 0355 6499048</button></a>
-<a href="tel:+923479951191"><button class="btn" style="background:#0a2a5e;margin-bottom:8px">📞 Call Now - 0347 9951191</button></a>
-<a href="https://wa.me/923068905860" target="_blank"><button class="btn" style="background:#25D366">Chat on WhatsApp</button></a>
+<!-- ===== VERIFY ===== -->
+<div id="verify" class="hidden">
+<div class="form-card">
+<h2 style="color:#0e7490">✅ Verify Certificate</h2>
+<p style="font-size:13px;color:#64748b">Certificate Number likhein, original certificate Google Drive se khul jayega.</p>
+<input id="certInput" placeholder="e.g. SCSA-001">
+<button class="btn" style="background:#0e7490;color:#fff;width:100%" onclick="verify()">🔍 Verify & Show Certificate</button>
+<div id="result"></div>
 </div>
 </div>
-
 </div>
-
-<div class="footer">© 2026 Smart Computer Science Academy, Barnala. All Rights Reserved.</div>
-<a class="whatsapp" href="https://wa.me/923068905860" target="_blank">WhatsApp</a>
+<div class="footer">© 2026 Smart Computer & Photo Studio | Qila Padhar, Barnala AJK<br>📱 0347 9951191 | 💬 0306 8905860</div>
 
 <script>
-let defaultStudents = {
-"SCSA/001/2026":{name:"Ahmed Khan",course:"COA - Certificate in Office Automation (1 Month)",date:"01 Jan 2026"},
-"SCSA/002/2026":{name:"Ayesha Bibi",course:"CCA - Certificate in Computer Applications (2 Months)",date:"01 Feb 2026"},
-"SCSA/003/2026":{name:"Muhammad Ali",course:"DCA - Diploma in Computer Applications (3 Months)",date:"01 Mar 2026"}
-};
-function getAllStudents(){
-  let saved = JSON.parse(localStorage.getItem('scsa_students') || '{}');
-  return {...defaultStudents, ...saved};
+// ==== YAHAN APNE CERTIFICATE DALO ====
+// Drive Link: https://drive.google.com/file/d/ABC123/view
+// Sirf ABC123 wali ID yahan dalo
+const certificates = [
+  { number: "SCSA-001", id: "PASTE_DRIVE_ID_1" },
+  { number: "SCSA-002", id: "PASTE_DRIVE_ID_2" },
+];
+
+function show(tab){
+  document.getElementById('home').classList.add('hidden');
+  document.getElementById('verify').classList.add('hidden');
+  document.getElementById('bHome').classList.remove('active');
+  document.getElementById('bVerify').classList.remove('active');
+  document.getElementById(tab).classList.remove('hidden');
+  document.getElementById(tab=='home'?'bHome':'bVerify').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-function showTab(id,btn){
-  document.querySelectorAll('.tab-page').forEach(d=>d.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
-  if(btn) btn.classList.add('active');
-  if(id==='tab-admin') renderTable();
-  window.scrollTo(0,0);
-}
-function verifyCert(){
-  let no = document.getElementById('verifyInput').value.trim().toUpperCase();
-  let all = getAllStudents();
-  let r = document.getElementById('verifyResult');
-  if(all[no]){
-    r.innerHTML = `<div class="success"><b>VERIFIED</b><br><br><b>Name:</b> ${all[no].name}<br><b>Course:</b> ${all[no].course}<br><b>Date:</b> ${all[no].date}<br><br>This certificate was issued by Smart Computer Science Academy, Barnala.</div>`;
+function verify(){
+  let val=document.getElementById('certInput').value.trim().toUpperCase();
+  let box=document.getElementById('result');
+  if(!val){alert('Certificate Number likhein');return;}
+  let f=certificates.find(c=>c.number===val);
+  if(f){
+    let preview="https://drive.google.com/file/d/"+f.id+"/preview";
+    let view="https://drive.google.com/file/d/"+f.id+"/view";
+    box.innerHTML=`<div style="background:#dcfce7;padding:14px;border-radius:12px;margin-top:14px"><b style="color:#166534">✅ VERIFIED - Original Certificate</b><p style="font-size:13px;color:#166534">Certificate No: ${f.number} | Smart Computer & Photo Studio, Barnala</p></div><h3 style="margin-top:14px">📄 Original Certificate (Google Drive):</h3><iframe src="${preview}" class="pdf-viewer"></iframe><a href="${view}" target="_blank" class="btn" style="background:#22c55e;color:#fff;width:100%;margin-top:10px">🔍 Drive Me Full Screen Dekhein</a>`;
   } else {
-    r.innerHTML = `<div class="error"><b>NOT FOUND</b><br>Certificate Number ${no} is not valid. Please check number or contact Academy.</div>`;
+    box.innerHTML=`<div style="background:#fee2e2;color:#991b1b;padding:14px;border-radius:12px;margin-top:14px"><b>❌ NOT FOUND</b><p style="margin-top:6px">Ye Number record me nahi mila. WhatsApp 0306 8905860 par rabta karein.</p></div>`;
   }
-}
-function adminLogin(){
-  if(document.getElementById('adminPass').value === 'Admin123'){
-    document.getElementById('loginBox').classList.add('hidden');
-    document.getElementById('adminPanel').classList.remove('hidden');
-    renderTable();
-  } else { alert('Wrong Password!'); }
-}
-function logoutAdmin(){
-  document.getElementById('adminPanel').classList.add('hidden');
-  document.getElementById('loginBox').classList.remove('hidden');
-  document.getElementById('adminPass').value='';
-}
-function saveStudent(){
-  let no = document.getElementById('certNo').value.trim().toUpperCase();
-  let name = document.getElementById('stuName').value.trim();
-  let course = document.getElementById('stuCourse').value;
-  let date = document.getElementById('stuDate').value.trim();
-  if(!no || !name || !date){ alert('Please fill all fields!'); return; }
-  let saved = JSON.parse(localStorage.getItem('scsa_students') || '{}');
-  saved[no] = {name:name, course:course, date:date};
-  localStorage.setItem('scsa_students', JSON.stringify(saved));
-  alert('Student Saved Successfully! Now Verify will show this student.');
-  document.getElementById('certNo').value=''; document.getElementById('stuName').value=''; document.getElementById('stuDate').value='';
-  renderTable();
-}
-function renderTable(){
-  let all = getAllStudents();
-  let keys = Object.keys(all);
-  document.getElementById('count').innerText = keys.length + ' Students';
-  let html = '<table><tr><th>Cert No</th><th>Name</th><th>Course</th><th>Date</th><th>Action</th></tr>';
-  keys.forEach(k=>{
-    html += `<tr><td>${k}</td><td>${all[k].name}</td><td>${all[k].course}</td><td>${all[k].date}</td><td><button class="small-btn edit" onclick="editStudent('${k}')">Edit</button><button class="small-btn del" onclick="deleteStudent('${k}')">Delete</button></td></tr>`;
-  });
-  html += '</table>';
-  document.getElementById('studentTable').innerHTML = html;
-}
-function editStudent(k){
-  let all = getAllStudents();
-  document.getElementById('certNo').value=k;
-  document.getElementById('stuName').value=all[k].name;
-  document.getElementById('stuCourse').value=all[k].course;
-  document.getElementById('stuDate').value=all[k].date;
-  window.scrollTo(0,0);
-  alert('Now edit fields and click Save Student again.');
-}
-function deleteStudent(k){
-  if(!confirm('Delete '+k+' ?')) return;
-  let saved = JSON.parse(localStorage.getItem('scsa_students') || '{}');
-  if(saved[k]){ delete saved[k]; localStorage.setItem('scsa_students', JSON.stringify(saved)); }
-  else { delete defaultStudents[k]; }
-  renderTable();
-  alert('Deleted');
 }
 </script>
 </body>
