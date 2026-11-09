@@ -5,20 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart Computer Science Academy - Barnala</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
 body{background:#f4f6fb;color:#222}
-header{background:#0b2a5b;color:#fff;padding:12px 15px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:10}
+header{background:#0b2a5b;color:#fff;padding:12px 15px;display:flex;align-items:center;gap:12px}
 header img{width:52px;height:52px;border-radius:50%;background:#fff;object-fit:cover}
-header h1{font-size:19px;line-height:1.2}
+header h1{font-size:19px}
 header p{font-size:12px;color:#ffcc00}
-nav{background:#fff;display:flex;justify-content:space-around;padding:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:76px;z-index:9}
+nav{background:#fff;display:flex;justify-content:space-around;padding:10px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
 nav button{border:none;background:none;font-weight:700;font-size:14px;color:#0b2a5b;cursor:pointer;padding:6px 10px}
 nav button.active{color:#fff;background:#0b2a5b;border-radius:20px}
 section{display:none;padding:18px;max-width:900px;margin:auto}
 section.active{display:block}
 .hero{background:linear-gradient(135deg,#0b2a5b,#1a5cff);color:#fff;padding:25px 20px;border-radius:15px;text-align:center}
 .hero h2{font-size:24px;margin-bottom:8px}
-.hero p{font-size:14px;opacity:.9}
 .btn{display:inline-block;margin-top:15px;background:#ffcc00;color:#000;font-weight:800;padding:11px 20px;border-radius:25px;text-decoration:none}
 .card{background:#fff;padding:16px;border-radius:12px;margin-top:14px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .card h3{color:#0b2a5b;margin-bottom:6px}
@@ -32,70 +31,56 @@ button.main{width:100%;padding:13px;background:#0b2a5b;color:#fff;border:none;bo
 .result.ok{background:#e6ffef;border:1px solid #0a9d4d}
 .result.bad{background:#ffe8e8;border:1px solid red}
 footer{text-align:center;padding:20px;font-size:13px;color:#777}
-.wa{position:fixed;bottom:20px;right:18px;background:#25D366;color:#fff;padding:13px 18px;border-radius:30px;text-decoration:none;font-weight:800;box-shadow:0 4px 15px rgba(0,0,0,.25)}
 </style>
 </head>
 <body>
 
 <header>
-<img src="logo.jpg" alt="Logo" onerror="this.src='https://via.placeholder.com/100?text=SCSA'">
-<div><h1>Smart Computer Science Academy</h1><p>Barnala, Azad Kashmir • Learn • Earn • Grow</p></div>
+<img src="logo.jpg" alt="Logo">
+<div><h1>Smart Computer Science Academy</h1><p>Barnala, Azad Kashmir</p></div>
 </header>
 
 <nav>
-<button class="active" onclick="show('home',this)">🏠 Home</button>
-<button onclick="show('courses',this)">📚 Courses</button>
-<button onclick="show('verify',this)">✅ Verify</button>
-<button onclick="show('contact',this)">📞 Contact</button>
+<button class="active" onclick="show('home',this)">Home</button>
+<button onclick="show('courses',this)">Courses</button>
+<button onclick="show('verify',this)">Verify</button>
+<button onclick="show('contact',this)">Contact</button>
 </nav>
 
-<!-- HOME -->
 <section id="home" class="active">
 <div class="hero">
 <h2>Admissions Open 2026</h2>
-<p>Computer Seekho, Future Banao. Barnala ki No.1 Computer Academy.</p>
-<a class="btn" href="#" onclick="show('courses',document.querySelectorAll('nav button')[1]);return false;">Courses Dekhen →</a>
+<p>Learn Computer Skills For A Better Future.</p>
+<a class="btn" href="#" onclick="show('courses',document.querySelectorAll('nav button')[1]);return false;">View Courses</a>
 </div>
 
 <div class="card principal">
-<img src="principal.jpg" alt="Principal" onerror="this.src='https://via.placeholder.com/150?text=Sir'">
-<div><h3>Principal's Message</h3><p><b>Sir Parvez</b><br>Assalam-o-Alaikum! Hamara maqsad hai ke Barnala ka har bacha computer me mahir ho. Practical seekhna hai to Smart Academy join karein.</p></div>
+<img src="principal.jpg" alt="Principal">
+<div><h3>Principal's Message</h3><p><b>Sir Parvez</b><br>Our goal is to provide quality computer education to every student in Barnala with practical training.</p></div>
 </div>
 
-<div class="card"><h3>⭐ Kyun Smart Academy?</h3><p>✔ 100% Practical Classes<br>✔ Expert Teachers<br>✔ Certificate Verification Online<br>✔ Kam Fees, Behtareen Seekhna<br>✔ Computer + English + Freelancing</p></div>
-
-<div class="card"><h3>📍 Academy Timing</h3><p>Subah 8:00 - Raat 8:00<br>Friday: Off<br>Location: Main Bazar Barnala</p></div>
+<div class="card"><h3>Why Smart Academy?</h3><p>100% Practical Classes<br>Expert Teachers<br>Online Certificate Verification</p></div>
 </section>
 
-<!-- COURSES -->
 <section id="courses">
-<div class="card"><h3>💻 DIT - Diploma in IT (1 Year)</h3><p>Computer Basics, MS Office, Windows, Internet, Typing, Photoshop, Hardware.<br><b>Best for Job & Office Work</b></p><p class="price">Fees: Monthly Rs. 1500</p><button class="main" onclick="enroll('DIT')">Enroll Now</button></div>
-
-<div class="card"><h3>🖥️ Computer Operator (6 Months)</h3><p>MS Word, Excel, PowerPoint, Urdu/Inpage, Internet, Email, Printing.<br><b>Best for Shop / Office Job</b></p><p class="price">Fees: Monthly Rs. 1200</p><button class="main" onclick="enroll('Computer Operator')">Enroll Now</button></div>
-
-<div class="card"><h3>🎨 Graphics Designing (3 Months)</h3><p>Photoshop, Illustrator, Canva, Logo, Thumbnail, Social Media Post Design.<br><b>Best for Freelancing & Earning</b></p><p class="price">Fees: Monthly Rs. 2000</p><button class="main" onclick="enroll('Graphics')">Enroll Now</button></div>
+<div class="card"><h3>DIT - Diploma in Information Technology</h3><p>Computer Basics, MS Office, Internet, Photoshop.</p><p class="price">Duration: 1 Year</p><button class="main" onclick="enroll('DIT')">Enroll Now</button></div>
+<div class="card"><h3>Computer Operator</h3><p>MS Word, Excel, PowerPoint, Internet, Email.</p><p class="price">Duration: 6 Months</p><button class="main" onclick="enroll('Computer Operator')">Enroll Now</button></div>
+<div class="card"><h3>Graphics Designing</h3><p>Photoshop, Illustrator, Canva, Logo Design.</p><p class="price">Duration: 3 Months</p><button class="main" onclick="enroll('Graphics')">Enroll Now</button></div>
 </section>
 
-<!-- VERIFY -->
 <section id="verify">
-<div class="card"><h3>✅ Certificate Verify Karein</h3><p>Apna Certificate Number neeche likhein. Misal: <b>SCSA-001</b></p>
-<input id="certNo" placeholder="Certificate No. likhein e.g. SCSA-001">
-<button class="main" onclick="verifyCert()">Verify Karein</button>
+<div class="card"><h3>Verify Certificate</h3><p>Enter your Certificate Number. Example: SCSA-001</p>
+<input id="certNo" placeholder="Enter Certificate Number">
+<button class="main" onclick="verifyCert()">Verify</button>
 <div id="verifyResult" class="result"></div>
-<p style="margin-top:12px;font-size:13px;color:#666">Test ke liye ye try karein: SCSA-001, SCSA-002, SCSA-003</p>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-<div class="card"><h3>📞 Rabta Karein</h3><p><b>Smart Computer Science Academy</b><br>Main Bazar, Barnala, Azad Kashmir<br><br>📱 WhatsApp: 0355-XXXXXXX<br>📞 Call: 0355-XXXXXXX<br>🕒 Timing: 8am - 8pm</p>
-<a class="btn" href="https://wa.me/92355XXXXXXX?text=Salam%20Sir,%20Mujhe%20Admission%20Chahiye">WhatsApp Par Message Karein</a>
-<p style="margin-top:10px;font-size:12px;color:red">Note: Upar apna asli WhatsApp number likhna mat bhoolna. 92355XXXXXXX ki jaga apna number likho.</p>
-</div>
+<div class="card"><h3>Contact Us</h3><p><b>Smart Computer Science Academy</b><br>Main Bazar, Barnala, Azad Kashmir<br><br>Phone: 0355-XXXXXXX<br>WhatsApp: 0355-XXXXXXX</p></div>
 </section>
 
-<footer>© 2026 Smart Computer Science Academy - Barnala<br>Made with ❤️ for Students</footer>
-<a class="wa" href="https://wa.me/92355XXXXXXX">💬 WhatsApp</a>
+<footer>© 2026 Smart Computer Science Academy - Barnala</footer>
 
 <script>
 function show(id,btn){
@@ -103,12 +88,11 @@ document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
 if(btn) btn.classList.add('active');
-window.scrollTo(0,0);
 }
 const students = {
-"SCSA-001":{name:"Ahmed Khan",course:"DIT - Diploma in IT",date:"Jan 2026",status:"Verified"},
-"SCSA-002":{name:"Ayesha Bibi",course:"Computer Operator",date:"Feb 2026",status:"Verified"},
-"SCSA-003":{name:"Muhammad Ali",course:"Graphics Designing",date:"Mar 2026",status:"Verified"}
+"SCSA-001":{name:"Ahmed Khan",course:"DIT - Diploma in IT",date:"Jan 2026"},
+"SCSA-002":{name:"Ayesha Bibi",course:"Computer Operator",date:"Feb 2026"},
+"SCSA-003":{name:"Muhammad Ali",course:"Graphics Designing",date:"Mar 2026"}
 };
 function verifyCert(){
 let n=document.getElementById('certNo').value.trim().toUpperCase();
@@ -116,15 +100,14 @@ let box=document.getElementById('verifyResult');
 box.style.display='block';
 if(students[n]){
 box.className='result ok';
-box.innerHTML=`<b>✅ VERIFIED ✔️</b><br><br><b>Naam:</b> ${students[n].name}<br><b>Course:</b> ${students[n].course}<br><b>Date:</b> ${students[n].date}<br><b>Status:</b> ${students[n].status}<br><br><small>Ye Certificate Smart Computer Science Academy Barnala se jaari hua hai.</small>`;
+box.innerHTML=`<b>VERIFIED</b><br><br><b>Name:</b> ${students[n].name}<br><b>Course:</b> ${students[n].course}<br><b>Date:</b> ${students[n].date}<br><br>This certificate was issued by Smart Computer Science Academy, Barnala.`;
 }else{
 box.className='result bad';
-box.innerHTML=`<b>❌ NOT FOUND</b><br>Ye number hamare record me nahi hai. Number dobara check karein ya Academy se rabta karein.`;
+box.innerHTML=`<b>NOT FOUND</b><br>This number is not found in our records. Please check the number or contact the academy.`;
 }
 }
 function enroll(c){
-alert(c + " me admission ke liye WhatsApp par message karein. Shukriya!");
-window.location.href="https://wa.me/92355XXXXXXX?text=Salam%20Sir,%20Mujhe%20"+c+"%20me%20admission%20chahiye";
+alert("For admission in " + c + ", please contact us on WhatsApp.");
 }
 </script>
 </body>
