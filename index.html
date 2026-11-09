@@ -70,17 +70,17 @@ th{background:#0a2a5e;color:#fff}
 </div>
 </div>
 <h3 style="margin-top:15px">Why Choose Us?</h3>
-<p>✅ Certificates<br>✅ 100% Practical Training<br>✅ Separate Classes for Boys & Girls<br>✅ Low Fees</p>✅ Modern Lab with Projector</p>✅ Flexible Timings Morning/Evening</p>
+<p>✅ Certificates<br>✅ 100% Practical Training<br>✅ Separate Classes for Boys & Girls<br>✅ Low Fees<br>✅ Modern Lab with Projector<br>✅ Flexible Timings Morning / Evening</p>
 </div>
 
 <!-- COURSES -->
 <div id="courses" class="card hidden">
 <h2>Our Courses</h2>
-<div class="course"><b>COA - Certificate in Office Automation</b><br>Duration: 01 Month | Fees: Rs. 7,000<br>
-<div class="course"><b>CCA - Certificate in Computer Applications</b><br>Duration: 02 Months | Fees: Rs. 18,000<br>
-<div class="course"><b>DCA - Diploma in Computer Applications</b><br>Duration: 03 Months | Fees: Rs. 30,000<br> 
-<div class="course"><b>Basic Typing Course</b><br>Duration: 1 Month | Fees: Rs. 4,000<br>
-<div class="course"><b>Typing Skill Course</b><br>Duration: 2 Months | Fees: Rs. 8,000<br>
+<div class="course"><b>COA - Certificate in Office Automation</b><br>Duration: 01 Month | Fees: Rs. 7,000<br>MS Word, Excel, PowerPoint, Internet, Typing</div>
+<div class="course"><b>CCA - Certificate in Computer Applications</b><br>Duration: 02 Months | Fees: Rs. 18,000<br>Office + Photoshop + Internet + Hardware Basics</div>
+<div class="course"><b>DCA - Diploma in Computer Applications</b><br>Duration: 03 Months | Fees: Rs. 30,000<br>Complete Diploma - Office, Graphics, Web, Database</div>
+<div class="course"><b>Basic Typing Course</b><br>Duration: 1 Month | Fees: Rs. 4,000<br>English & Urdu Typing, Speed Practice</div>
+<div class="course"><b>Typing Skill Course</b><br>Duration: 2 Months | Fees: Rs. 8,000<br>Advanced Typing Speed, Professional Practice</div>
 </div>
 
 <!-- VERIFY -->
@@ -95,33 +95,30 @@ th{background:#0a2a5e;color:#fff}
 <!-- ADMIN -->
 <div id="admin" class="card hidden">
 <h2>Admin - Upload Student Data</h2>
-
 <div id="loginBox">
 <p>Enter Admin Password to Continue</p>
 <input type="password" id="adminPass" placeholder="Enter Password">
 <button class="btn" onclick="adminLogin()">Login</button>
 <p style="font-size:12px;color:#888;margin-top:8px">Default Password: Admin123</p>
 </div>
-
 <div id="adminPanel" class="hidden">
 <p style="color:green;font-weight:700">✅ Logged In As Admin</p>
 <label>Certificate Number</label>
-<input type="text" id="Cert.No." placeholder="Example: SCSA/004/2026">
+<input type="text" id="certNo" placeholder="Example: SCSA/004/2026">
 <label>Student Name</label>
 <input type="text" id="stuName" placeholder="Example: Fatima Khan">
 <label>Course</label>
 <select id="stuCourse">
 <option value="COA - Certificate in Office Automation (1 Month)">COA - Certificate in Office Automation (1 Month)</option>
 <option value="CCA - Certificate in Computer Applications (2 Months)">CCA - Certificate in Computer Applications (2 Months)</option>
-<option value="DCA - Diploma in Computer Applications(3 Months)">DCA - Diploma in Computer Applications(3 Months)</option>
+<option value="DCA - Diploma in Computer Applications (3 Months)">DCA - Diploma in Computer Applications (3 Months)</option>
 <option value="Basic Typing Course (1 Month)">Basic Typing Course (1 Month)</option>
-<option value="Typing Skill Course (2 Months)">Basic Typing Course (2 Months)</option>
+<option value="Typing Skill Course (2 Months)">Typing Skill Course (2 Months)</option>
 </select>
 <label>Issue Date</label>
-<input type="text" id="stuDate" placeholder="Example:01 May 2026">
+<input type="text" id="stuDate" placeholder="Example: 01 May 2026">
 <button class="btn btn-yellow" onclick="saveStudent()">Save Student</button>
 <button class="btn" onclick="logoutAdmin()" style="background:#666">Logout</button>
-
 <h3>Saved Students List - <span id="count"></span></h3>
 <div id="studentTable"></div>
 </div>
@@ -131,10 +128,14 @@ th{background:#0a2a5e;color:#fff}
 <div id="contact" class="card hidden">
 <h2>Contact Us</h2>
 <p><b>Address:</b> Qila Padhar, Barnala, District Bhimber, Azad Kashmir Pakistan</p>
-<p><b>Call:</b> +92 355 6499048 +92 355 6499048  WhatsApp:</p>+92 306 8905860</p>
+<p><b>Call 1:</b> +92 355 6499048</p>
+<p><b>Call 2:</b> +92 347 9951191</p>
+<p><b>WhatsApp:</b> +92 306 8905860</p>
 <p><b>Principal:</b> Muhammad Parvez</p>
 <p><b>Timing:</b> Saturday - Thursday | 9 AM - 5 PM</p>
-<a href="https://wa.me/923556499048" target="_blank"><button class="btn" style="background:#25D366">Chat on WhatsApp</button></a>
+<a href="tel:+923556499048"><button class="btn" style="background:#0a2a5e;margin-bottom:8px">📞 Call Now - 0355 6499048</button></a>
+<a href="tel:+923479951191"><button class="btn" style="background:#0a2a5e;margin-bottom:8px">📞 Call Now - 0347 9951191</button></a>
+<a href="https://wa.me/923068905860" target="_blank"><button class="btn" style="background:#25D366">Chat on WhatsApp</button></a>
 </div>
 
 </div>
@@ -143,11 +144,10 @@ th{background:#0a2a5e;color:#fff}
 <a class="whatsapp" href="https://wa.me/923068905860" target="_blank">WhatsApp</a>
 
 <script>
-// DEFAULT STUDENTS
 let defaultStudents = {
-"SCSA-001":{name:"Ahmed Khan",course:"COA - Certificate in Office Automation",date:"01 Jan 2026"},
-"SCSA-002":{name:"Ayesha Bibi",course:"CCA - Certificate in Computer Applications",date:"01 Feb 2026"},
-"SCSA-003":{name:"Muhammad Ali",course:"DCA - Diploma in Computer Applications",date:"01 Mar 2026"}
+"SCSA/001/2026":{name:"Ahmed Khan",course:"COA - Certificate in Office Automation (1 Month)",date:"01 Jan 2026"},
+"SCSA/002/2026":{name:"Ayesha Bibi",course:"CCA - Certificate in Computer Applications (2 Months)",date:"01 Feb 2026"},
+"SCSA/003/2026":{name:"Muhammad Ali",course:"DCA - Diploma in Computer Applications (3 Months)",date:"01 Mar 2026"}
 };
 function getAllStudents(){
   let saved = JSON.parse(localStorage.getItem('scsa_students') || '{}');
@@ -170,9 +170,8 @@ function verifyCert(){
     r.innerHTML = `<div class="error"><b>NOT FOUND</b><br>Certificate Number ${no} is not valid. Please check number or contact Academy.</div>`;
   }
 }
-let editKey = "";
 function adminLogin(){
-  if(document.getElementById('adminPass').value === 'admin123'){
+  if(document.getElementById('adminPass').value === 'Admin123'){
     document.getElementById('loginBox').classList.add('hidden');
     document.getElementById('adminPanel').classList.remove('hidden');
     renderTable();
@@ -194,7 +193,6 @@ function saveStudent(){
   localStorage.setItem('scsa_students', JSON.stringify(saved));
   alert('Student Saved Successfully! Now Verify will show this student.');
   document.getElementById('certNo').value=''; document.getElementById('stuName').value=''; document.getElementById('stuDate').value='';
-  editKey='';
   renderTable();
 }
 function renderTable(){
