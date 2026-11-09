@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Computer Science Academy - Barnala</title>
+<title>Smart Computer Science Academy</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#f4f6fb;color:#222}
 header{background:#0b2a5b;color:#fff;padding:12px 15px;display:flex;align-items:center;gap:12px}
-header img{width:52px;height:52px;border-radius:50%;background:#fff;object-fit:cover}
-header h1{font-size:19px}
+header img{width:56px;height:56px;border-radius:50%;background:#fff;object-fit:cover}
+header h1{font-size:20px}
 header p{font-size:12px;color:#ffcc00}
 nav{background:#fff;display:flex;justify-content:space-around;padding:10px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
 nav button{border:none;background:none;font-weight:700;font-size:14px;color:#0b2a5b;cursor:pointer;padding:6px 10px}
@@ -22,22 +22,24 @@ section.active{display:block}
 .card{background:#fff;padding:16px;border-radius:12px;margin-top:14px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .card h3{color:#0b2a5b;margin-bottom:6px}
 .card p{font-size:14px;line-height:1.6;color:#444}
-.price{color:#0a9d4d;font-weight:800;margin-top:8px}
+.card ul{margin:10px 0 0 18px;font-size:14px;line-height:1.7;color:#444}
+.badge{display:inline-block;background:#e8f0ff;color:#0b2a5b;font-weight:800;font-size:13px;padding:5px 10px;border-radius:20px;margin-bottom:8px}
 .principal{display:flex;gap:14px;align-items:center}
-.principal img{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid #ffcc00}
+.principal img{width:95px;height:95px;border-radius:50%;object-fit:cover;border:3px solid #ffcc00}
 input{width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;margin-top:10px;font-size:16px}
 button.main{width:100%;padding:13px;background:#0b2a5b;color:#fff;border:none;border-radius:10px;font-weight:800;margin-top:12px;font-size:16px;cursor:pointer}
 .result{margin-top:14px;padding:14px;border-radius:10px;display:none}
 .result.ok{background:#e6ffef;border:1px solid #0a9d4d}
 .result.bad{background:#ffe8e8;border:1px solid red}
 footer{text-align:center;padding:20px;font-size:13px;color:#777}
+.wa{position:fixed;bottom:20px;right:18px;background:#25D366;color:#fff;padding:13px 18px;border-radius:30px;text-decoration:none;font-weight:800}
 </style>
 </head>
 <body>
 
 <header>
 <img src="logo.jpg" alt="Logo">
-<div><h1>Smart Computer Science Academy</h1><p>Barnala, Azad Kashmir</p></div>
+<div><h1>Smart Computer Science Academy</h1><p>Qila Padhar Barnala Azad Kashmir Pakistan</p></div>
 </header>
 
 <nav>
@@ -50,22 +52,68 @@ footer{text-align:center;padding:20px;font-size:13px;color:#777}
 <section id="home" class="active">
 <div class="hero">
 <h2>Admissions Open 2026</h2>
-<p>Learn Computer Skills For A Better Future.</p>
+<p>Short Computer Courses - Learn Computer Skills For A Better Future.</p>
 <a class="btn" href="#" onclick="show('courses',document.querySelectorAll('nav button')[1]);return false;">View Courses</a>
 </div>
 
 <div class="card principal">
-<img src="principal.jpg" alt="Principal">
-<div><h3>Principal's Message</h3><p><b>Sir Parvez</b><br>Our goal is to provide quality computer education to every student in Barnala with practical training.</p></div>
+<img src="principal.jpg" alt="Muhammad Parvez">
+<div><h3>Principal's Message</h3><p><b>Muhammad Parvez</b><br>Our goal is to provide quality computer education to every student in Barnala with practical training.</p></div>
 </div>
 
 <div class="card"><h3>Why Smart Academy?</h3><p>100% Practical Classes<br>Expert Teachers<br>Online Certificate Verification</p></div>
 </section>
 
 <section id="courses">
-<div class="card"><h3>DIT - Diploma in Information Technology</h3><p>Computer Basics, MS Office, Internet, Photoshop.</p><p class="price">Duration: 1 Year</p><button class="main" onclick="enroll('DIT')">Enroll Now</button></div>
-<div class="card"><h3>Computer Operator</h3><p>MS Word, Excel, PowerPoint, Internet, Email.</p><p class="price">Duration: 6 Months</p><button class="main" onclick="enroll('Computer Operator')">Enroll Now</button></div>
-<div class="card"><h3>Graphics Designing</h3><p>Photoshop, Illustrator, Canva, Logo Design.</p><p class="price">Duration: 3 Months</p><button class="main" onclick="enroll('Graphics')">Enroll Now</button></div>
+<h2 style="color:#0b2a5b;margin-bottom:5px;">Short Computer Courses</h2>
+
+<div class="card">
+<span class="badge">1 Month</span>
+<h3>Certificate in Office Automation (COA)</h3>
+<p><b>Course Details:</b></p>
+<ul>
+<li>Typing</li>
+<li>Basic Knowledge of Computer</li>
+<li>Windows Hardware & Software</li>
+<li>MS Word Excel PowerPoint</li>
+</ul>
+<button class="main" onclick="enroll('COA - 1 Month')">Enroll Now</button>
+</div>
+
+<div class="card">
+<span class="badge">2 Months</span>
+<h3>Certificate in Computer Applications (CCA)</h3>
+<p><b>Course Details:</b></p>
+<ul>
+<li>Typing</li>
+<li>Basic Knowledge of Computer</li>
+<li>Windows, Hardware & Software</li>
+<li>Word, Excel & PowerPoint</li>
+<li>Urdu Software InPage</li>
+<li>Create & Send / Receive Email</li>
+<li>Usage of Internet</li>
+</ul>
+<button class="main" onclick="enroll('CCA - 2 Months')">Enroll Now</button>
+</div>
+
+<div class="card">
+<span class="badge">3 Months</span>
+<h3>Diploma in Computer Applications (DCA)</h3>
+<p><b>Course Details:</b></p>
+<ul>
+<li>Typing</li>
+<li>Basic Knowledge of Computer</li>
+<li>Windows, Hardware & Software</li>
+<li>Word, Excel & PowerPoint</li>
+<li>Urdu Software InPage</li>
+<li>Create & Send / Receive Email</li>
+<li>Usage of Internet</li>
+<li>Software & Hardware Installation</li>
+</ul>
+<button class="main" onclick="enroll('DCA - 3 Months')">Enroll Now</button>
+</div>
+
+<div class="card"><h3>Key Benefits</h3><p>100% Practical<br>Modern Lab with Projector<br>Course Certificate<br>Experienced Instructor<br>Flexible Timing Morning / Evening</p></div>
 </section>
 
 <section id="verify">
@@ -77,10 +125,18 @@ footer{text-align:center;padding:20px;font-size:13px;color:#777}
 </section>
 
 <section id="contact">
-<div class="card"><h3>Contact Us</h3><p><b>Smart Computer Science Academy</b><br>Main Bazar, Barnala, Azad Kashmir<br><br>Phone: 0355-XXXXXXX<br>WhatsApp: 0355-XXXXXXX</p></div>
+<div class="card"><h3>Contact Us</h3>
+<p><b>Smart Computer Science Academy</b><br>Qila Padhar Barnala Azad Kashmir Pakistan<br>Near Break Bite Pizza<br><br>
+<b>Mobile:</b> +92 355 6499048<br>
+<b>Mobile:</b> +92 347 9951191<br>
+<b>WhatsApp:</b> +92 306 8905860<br>
+<b>Email:</b> smartcomp812@gmail.com</p>
+<a class="btn" href="https://wa.me/923068905860?text=Hello%20Sir,%20I%20Want%20Admission">Message on WhatsApp</a>
+</div>
 </section>
 
-<footer>© 2026 Smart Computer Science Academy - Barnala</footer>
+<footer>© 2026 Smart Computer Science Academy<br>Qila Padhar Barnala Azad Kashmir Pakistan</footer>
+<a class="wa" href="https://wa.me/923068905860">WhatsApp</a>
 
 <script>
 function show(id,btn){
@@ -90,9 +146,9 @@ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'))
 if(btn) btn.classList.add('active');
 }
 const students = {
-"SCSA-001":{name:"Ahmed Khan",course:"DIT - Diploma in IT",date:"Jan 2026"},
-"SCSA-002":{name:"Ayesha Bibi",course:"Computer Operator",date:"Feb 2026"},
-"SCSA-003":{name:"Muhammad Ali",course:"Graphics Designing",date:"Mar 2026"}
+"SCSA-001":{name:"Ahmed Khan",course:"COA - Certificate in Office Automation",date:"Jan 2026"},
+"SCSA-002":{name:"Ayesha Bibi",course:"CCA - Certificate in Computer Applications",date:"Feb 2026"},
+"SCSA-003":{name:"Muhammad Ali",course:"DCA - Diploma in Computer Applications",date:"Mar 2026"}
 };
 function verifyCert(){
 let n=document.getElementById('certNo').value.trim().toUpperCase();
@@ -107,7 +163,7 @@ box.innerHTML=`<b>NOT FOUND</b><br>This number is not found in our records. Plea
 }
 }
 function enroll(c){
-alert("For admission in " + c + ", please contact us on WhatsApp.");
+window.location.href="https://wa.me/923068905860?text=Hello%20Sir,%20I%20Want%20Admission%20in%20"+c;
 }
 </script>
 </body>
