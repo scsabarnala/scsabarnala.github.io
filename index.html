@@ -49,37 +49,34 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <button onclick="showTab('tab-contact',this)">Contact</button>
 </nav>
 <div class="container">
-
 <div id="tab-home" class="tab-page">
 <div class="card">
+<div style="text-align:center">
 <h2>Welcome to Smart Computer Science Academy</h2>
 <h2>Empowering Your Digital Future</h2>
 <p>Learn Computer Skills for a Bright Future.</p>
-
+</div>
 <div class="principal" style="margin-top:15px">
 <img src="principal.jpg" alt="Principal">
 <div>
 <h3>Muhammad Parvez</h3>
 <p>Principal & Founder</p>
-<span class="badge">30 Years Practical Computer Experience</span>
+<span class="badge">30 Years Experience</span>
 <p style="margin-top:8px">Our mission is to provide quality computer education in Barnala at affordable fees.</p>
 </div>
 </div>
-
-<h3 style="margin-top:18px">Our Computer Lab - Qila Padhar, Barnala</h3>
-
+<h3 style="margin-top:18px">Our Computer Lab - Qila Padhar</h3>
+<p>Modern lab with projector, separate cabins, and 100% practical training.</p>
 <div class="gallery">
 <img src="lab1.jpg" alt="Lab 1" onerror="this.style.display='none'">
 <img src="lab2.jpg" alt="Lab 2" onerror="this.style.display='none'">
 <img src="lab3.jpg" alt="Lab 3" onerror="this.style.display='none'">
 <img src="lab4.jpg" alt="Lab 4" onerror="this.style.display='none'">
 </div>
-
 <h3 style="margin-top:18px">Why Choose Us?</h3>
 <p>✅ Institute Certificate<br>✅ 100% Practical Training<br>✅ Separate Classes for Boys & Girls<br>✅ Affordable Fees<br>✅ Modern Lab with Projector<br>✅ Flexible Timings Morning / Evening</p>
 </div>
 </div>
-
 <div id="tab-courses" class="tab-page hidden">
 <div class="card">
 <h2>Our Courses</h2>
@@ -95,7 +92,6 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="course"><b>Typing Skill Course</b><br>Duration: 2 Months | Advanced Typing Speed</div>
 </div>
 </div>
-
 <div id="tab-verify" class="tab-page hidden">
 <div class="card">
 <h2>Verify Certificate</h2>
@@ -105,10 +101,9 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div id="verifyResult"></div>
 </div>
 </div>
-
 <div id="tab-admin" class="tab-page hidden">
 <div class="card">
-<h2>Admin - Upload Student's Data</h2>
+<h2>Admin - Upload Student Data</h2>
 <div id="loginBox">
 <p>Enter Admin Password to Continue</p>
 <input type="password" id="adminPass" placeholder="Enter Password">
@@ -136,7 +131,6 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 </div>
 </div>
 </div>
-
 <div id="tab-contact" class="tab-page hidden">
 <div class="card">
 <h2>Contact Us</h2>
@@ -147,11 +141,9 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <a href="https://wa.me/923068905860" target="_blank"><button class="btn" style="background:#25D366">Chat on WhatsApp</button></a>
 </div>
 </div>
-
 </div>
 <div class="footer">© 2026 Smart Computer Science Academy, Barnala. All Rights Reserved.</div>
 <a class="whatsapp" href="https://wa.me/923068905860" target="_blank">WhatsApp</a>
-
 <script>
 const SHEET_URL = "PASTE_YOUR_URL_HERE";
 function showTab(id,btn){
