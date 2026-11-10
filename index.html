@@ -146,7 +146,7 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="footer">© 2026 Smart Computer Science Academy, Barnala. All Rights Reserved.</div>
 <a class="whatsapp" href="https://wa.me/923068905860" target="_blank">WhatsApp</a>
 <script>
-const SHEET_URL = "PASTE_YOUR_URL_HERE";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbx4Sw9LE4GcoWUafLftfRqtb5bAVgI23hoe6FX3qkifit1hzeGrU0-yl66BKXI2DdfTcA/exec";
 function showTab(id,btn){
   document.querySelectorAll('.tab-page').forEach(d=>d.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
@@ -160,7 +160,7 @@ async function verifyCert(){
   if(!no){ r.innerHTML = `<div class="error">Please enter Certificate Number</div>`; return; }
   r.innerHTML = `<p>Checking... Please wait</p>`;
   try{
-    let res = await fetch(SHEET_URL + "?cert=" + encodeURIComponent(no));
+    let res = await fetch(SHEET_URL + "?id=" + encodeURIComponent(no));
     let data = await res.json();
     if(data.found){
       r.innerHTML = `<div class="success"><b>VERIFIED</b><br><br><b>Name:</b> ${data.name}<br><b>Course:</b> ${data.course}<br><b>Issue Date:</b> ${data.date}<br><br>This certificate was issued by Smart Computer Science Academy, Barnala.</div>`;
