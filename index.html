@@ -45,7 +45,6 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <button onclick="showTab('tab-home',this)" class="active">Home</button>
 <button onclick="showTab('tab-courses',this)">Courses</button>
 <button onclick="showTab('tab-verify',this)">Verify</button>
-<button onclick="showTab('tab-admin',this)">Admin</button>
 <button onclick="showTab('tab-contact',this)">Contact</button>
 </nav>
 <div class="container">
@@ -100,36 +99,6 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div id="verifyResult"></div>
 </div>
 </div>
-<div id="tab-admin" class="tab-page hidden">
-<div class="card">
-<h2>Admin - Upload Student's Data</h2>
-<div id="loginBox">
-<p>Enter Admin Password to Continue</p>
-<input type="password" id="adminPass" placeholder="Enter Password">
-<button class="btn" onclick="adminLogin()">Login</button>
-</div>
-<div id="adminPanel" class="hidden">
-<p style="color:green;font-weight:700">✅ Logged In As Admin</p>
-<label>Certificate Number</label>
-<input type="text" id="certNo" placeholder="SCSA/004/2026">
-<label>Student Name</label>
-<input type="text" id="stuName" placeholder="Fatima Khan">
-<label>Course</label>
-<select id="stuCourse">
-<option value="COA - Certificate in Office Automation (1 Month)">COA - Certificate in Office Automation (1 Month)</option>
-<option value="CCA - Certificate in Computer Applications (2 Months)">CCA - Certificate in Computer Applications (2 Months)</option>
-<option value="DCA - Diploma in Computer Applications (3 Months)">DCA - Diploma in Computer Applications (3 Months)</option>
-<option value="Basic Typing Course (1 Month)">Basic Typing Course (1 Month)</option>
-<option value="Typing Skill Course (2 Months)">Typing Skill Course (2 Months)</option>
-</select>
-<label>Issue Date</label>
-<input type="text" id="stuDate" placeholder="01 May 2026">
-<button class="btn btn-yellow" onclick="saveStudent()">Save to Google Sheet</button>
-<button class="btn" onclick="logoutAdmin()" style="background:#666">Logout</button>
-<div id="saveMsg"></div>
-</div>
-</div>
-</div>
 <div id="tab-contact" class="tab-page hidden">
 <div class="card">
 <h2>Contact Us</h2>
@@ -168,30 +137,6 @@ async function verifyCert(){
       r.innerHTML = `<div class="error"><b>NOT FOUND</b><br>Certificate ${no} is not valid.</div>`;
     }
   }catch(e){ r.innerHTML = `<div class="error">Connection error. Check Google Sheet URL.</div>`; }
-}
-function adminLogin(){
-  if(document.getElementById('adminPass').value === 'Admin123@'){
-    document.getElementById('loginBox').classList.add('hidden');
-    document.getElementById('adminPanel').classList.remove('hidden');
-  } else { alert('Wrong Password!'); }
-}
-function logoutAdmin(){
-  document.getElementById('adminPanel').classList.add('hidden');
-  document.getElementById('loginBox').classList.remove('hidden');
-  document.getElementById('adminPass').value='';
-}
-async function saveStudent(){
-  let no = document.getElementById('certNo').value.trim().toUpperCase();
-  let name = document.getElementById('stuName').value.trim();
-  let course = document.getElementById('stuCourse').value;
-  let date = document.getElementById('stuDate').value.trim();
-  if(!no || !name || !date){ alert('Please fill all fields!'); return; }
-  document.getElementById('saveMsg').innerHTML = `<p>Saving... Please wait</p>`;
-  try{
-    await fetch(SHEET_URL, {method:'POST', mode:'no-cors', body: JSON.stringify({cert:no, name:name, course:course, date:date})});
-    document.getElementById('saveMsg').innerHTML = `<div class="success">✅ Saved! Anyone can now Verify ${no}.</div>`;
-    document.getElementById('certNo').value=''; document.getElementById('stuName').value=''; document.getElementById('stuDate').value='';
-  }catch(e){ document.getElementById('saveMsg').innerHTML = `<div class="error">Error saving.</div>`; }
 }
 </script>
 </body>
