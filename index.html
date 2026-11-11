@@ -117,14 +117,14 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="footer">© 2026 Smart Computer Science Academy, Barnala, AJ&K. All Rights Reserved.</div>
 <a class="whatsapp" href="https://wa.me/923068905860" target="_blank">WhatsApp</a>
 <div style="text-align:center; font-family:Arial; font-size:16px; font-weight:bold; background:#000; color:#fff; padding:10px; margin:10px; border-radius:10px;">
- Total Visitors: <span id="visitCount">Loading...</span>
+Total Visitors: <span id="visitCount">Loading...</span>
 </div>
 <script>
-fetch('https://api.countapi.xyz/hit/scsabarnala-github-io/visits')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('visitCount').innerText = data.value;
-  });
+fetch('https://abacus.jasoncameron.dev/hit/scsabarnala/visits')
+.then(res => res.json())
+.then(data => {
+document.getElementById('visitCount').innerText = data.value;
+});
 </script>
 <script>
 const SHEET_URL = "https://script.google.com/macros/s/AKfycbx4Sw9LE4GcoWUafLftfRqtb5bAVgI23hoe6FX3qkifit1hzeGrU0-yl66BKXI2DdfTcA/exec";
