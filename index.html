@@ -93,7 +93,7 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div id="tab-verify" class="tab-page hidden">
 <div class="card">
 <h2>Verify Certificate</h2>
-<p>Enter your Certificate Number:</p>
+<p>Enter Your Certificate Number Then Click On Verify Button:</p>
 <input type="text" id="verifyInput">
 <button class="btn" onclick="verifyCert()">Verify</button>
 <div id="verifyResult"></div>
@@ -136,7 +136,7 @@ async function verifyCert(){
     if(data.found){
       r.innerHTML = `<div class="success"><b>VERIFIED</b><br><br><b>Name:</b> ${data.name}<br><b>Course:</b> ${data.course}<br><b>Issue Date:</b> ${data.date}<br><br>This certificate was issued by Smart Computer Science Academy, Barnala, AJ&K, Pakistan</div>`;
     } else {
-      r.innerHTML = `<div class="error"><b>NOT FOUND</b><br>Certificate ${no} is not valid.</div>`;
+      r.innerHTML = `<div class="error"><b>NOT FOUND</b><br>Certificate ${no} is not valid. Please Contact Smart Computer Science Academy.</div>`;
     }
   }catch(e){ r.innerHTML = `<div class="error">Connection error. Check Google Sheet URL.</div>`; }
 }
