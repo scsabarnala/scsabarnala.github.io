@@ -45,8 +45,6 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <button onclick="showTab('tab-home',this)" class="active">Home</button>
 <button onclick="showTab('tab-courses',this)">Courses</button>
 <button onclick="showTab('tab-verify-certificate',this)">Verify Certificate</button>
-<button onclick="showTab('tab-verify-fees',this)">Verify Fees</button>
-<button onclick="showTab('tab-apply-online',this)">Apply Online</button>
 <button onclick="showTab('tab-contact',this)">Contact</button>
 </nav>
 <div class="container">
@@ -103,35 +101,6 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div id="verifyResult"></div>
 </div>
 </div>
-<div id="tab-verify-fees" class="tab-page hidden">
-<div class="card">
-<h2>Verify Fees</h2>
-<p>Please Enter Student ID / Roll No then click on Verify Fees.</p>
-<input type="text" id="feesInput" placeholder="Student ID / Roll No">
-<button class="btn" onclick="verifyFees()">Verify Fees</button>
-<div id="feesResult"></div>
-</div>
-</div>
-<div id="tab-apply-online" class="tab-page hidden">
-<div class="card">
-<h2>Apply Online</h2>
-<p>Fill this form for admission. We will contact you on WhatsApp.</p>
-<input type="text" id="applyName" placeholder="Student Name">
-<input type="text" id="applyFather" placeholder="Father Name">
-<input type="text" id="applyPhone" placeholder="WhatsApp Number e.g. 03068905860">
-<select id="applyCourse">
-<option value="">Select Course</option>
-<option>Basic Typing Course</option>
-<option>Typing Skill Course</option>
-<option>COA - Certificate in Office Automation</option>
-<option>CCA - Certificate in Computer Applications</option>
-<option>DCA - Diploma in Computer Applications</option>
-<option>Adobe Photo Shop</option>
-</select>
-<button class="btn btn-yellow" onclick="applyOnline()">Submit Application</button>
-<div id="applyResult"></div>
-</div>
-</div>
 <div id="tab-contact" class="tab-page hidden">
 <div class="card">
 <h2>Contact Us</h2>
@@ -182,22 +151,6 @@ async function verifyCert(){
       r.innerHTML = `<div class="error"><b>NOT FOUND</b><br>Certificate ${no} is not valid. Please Contact Smart Computer Science Academy.</div>`;
     }
   }catch(e){ r.innerHTML = `<div class="error">Connection error. Check Google Sheet URL.</div>`; }
-}
-function verifyFees(){
-  let no = document.getElementById('feesInput').value.trim().toUpperCase();
-  let r = document.getElementById('feesResult');
-  if(!no){ r.innerHTML = `<div class="error">Please enter Student ID / Roll No</div>`; return; }
-  r.innerHTML = `<div class="success"><b>Fees Record Found</b><br><br><b>Student ID:</b> ${no}<br><b>Status:</b> Please contact Academy on WhatsApp +92 306 8905860 for full fees detail.</div>`;
-}
-function applyOnline(){
-  let name = document.getElementById('applyName').value.trim();
-  let father = document.getElementById('applyFather').value.trim();
-  let phone = document.getElementById('applyPhone').value.trim();
-  let course = document.getElementById('applyCourse').value;
-  let r = document.getElementById('applyResult');
-  if(!name || !phone || !course){ r.innerHTML = `<div class="error">Please fill Name, WhatsApp Number and Course.</div>`; return; }
-  let msg = `New Admission Application%0AName: ${name}%0AFather: ${father}%0APhone: ${phone}%0ACourse: ${course}`;
-  r.innerHTML = `<div class="success"><b>Application Received!</b><br>Thank you ${name}. We will contact you soon.<br><br><a href="https://wa.me/923068905860?text=${msg}" target="_blank"><button class="btn" style="background:#25D366">Send on WhatsApp</button></a></div>`;
 }
 </script>
 </body>
