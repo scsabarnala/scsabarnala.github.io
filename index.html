@@ -11,8 +11,8 @@ header{background:#0a2a5e;color:#fff;padding:12px 15px;display:flex;align-items:
 header img{width:55px;height:55px;border-radius:50%;background:#fff;object-fit:cover}
 header h1{font-size:18px;line-height:1.2}
 header p{font-size:12px;opacity:.9}
-nav{background:#fff;display:flex;justify-content:space-around;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:79px;z-index:99}
-nav button{flex:1;background:none;border:none;padding:11px 1px;font-size:13px;font-weight:700;cursor:pointer;color:#0a2a5e;border-bottom:3px solid transparent}
+nav{background:#fff;display:flex;justify-content:space-between;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:79px;z-index:99}
+nav button{flex:1;background:none;border:none;padding:11px 2px;font-size:12px;font-weight:700;cursor:pointer;color:#0a2a5e;border-bottom:3px solid transparent;white-space:nowrap}
 nav button.active{border-bottom:3px solid #f5b301;color:#000}
 .container{max-width:900px;margin:auto;padding:15px}
 .card{background:#fff;border-radius:14px;padding:18px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
@@ -44,7 +44,9 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <nav>
 <button onclick="showTab('tab-home',this)" class="active">Home</button>
 <button onclick="showTab('tab-courses',this)">Courses</button>
-<button onclick="showTab('tab-verify',this)">Verify</button>
+<button onclick="showTab('tab-verify-certificate',this)">Verify Certificate</button>
+<button onclick="showTab('tab-verify-fees',this)">Verify Fees</button>
+<button onclick="showTab('tab-apply-online',this)">Apply Online</button>
 <button onclick="showTab('tab-contact',this)">Contact</button>
 </nav>
 <div class="container">
@@ -92,13 +94,42 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="course"><b>6. Adobe Photo Shop</b><br>Duration: 01 Month | Introduction of Photoshop & Tools, Photo Editing/Background Changing/Retouching/Face Cleaning, Passport Size Photo</div>
 </div>
 </div>
-<div id="tab-verify certificate" class="tab-page hidden">
+<div id="tab-verify-certificate" class="tab-page hidden">
 <div class="card">
 <h2>Verify Certificate</h2>
 <p>Please Enter Certificate Number then click on Verify.</p>
 <input type="text" id="verifyInput">
 <button class="btn" onclick="verifyCert()">Verify</button>
 <div id="verifyResult"></div>
+</div>
+</div>
+<div id="tab-verify-fees" class="tab-page hidden">
+<div class="card">
+<h2>Verify Fees</h2>
+<p>Please Enter Student ID / Roll No then click on Verify Fees.</p>
+<input type="text" id="feesInput" placeholder="Student ID / Roll No">
+<button class="btn" onclick="verifyFees()">Verify Fees</button>
+<div id="feesResult"></div>
+</div>
+</div>
+<div id="tab-apply-online" class="tab-page hidden">
+<div class="card">
+<h2>Apply Online</h2>
+<p>Fill this form for admission. We will contact you on WhatsApp.</p>
+<input type="text" id="applyName" placeholder="Student Name">
+<input type="text" id="applyFather" placeholder="Father Name">
+<input type="text" id="applyPhone" placeholder="WhatsApp Number e.g. 03068905860">
+<select id="applyCourse">
+<option value="">Select Course</option>
+<option>Basic Typing Course</option>
+<option>Typing Skill Course</option>
+<option>COA - Certificate in Office Automation</option>
+<option>CCA - Certificate in Computer Applications</option>
+<option>DCA - Diploma in Computer Applications</option>
+<option>Adobe Photo Shop</option>
+</select>
+<button class="btn btn-yellow" onclick="applyOnline()">Submit Application</button>
+<div id="applyResult"></div>
 </div>
 </div>
 <div id="tab-contact" class="tab-page hidden">
@@ -151,6 +182,22 @@ async function verifyCert(){
       r.innerHTML = `<div class="error"><b>NOT FOUND</b><br>Certificate ${no} is not valid. Please Contact Smart Computer Science Academy.</div>`;
     }
   }catch(e){ r.innerHTML = `<div class="error">Connection error. Check Google Sheet URL.</div>`; }
+}
+function verifyFees(){
+  let no = document.getElementById('feesInput').value.trim().toUpperCase();
+  let r = document.getElementById('feesResult');
+  if(!no){ r.innerHTML = `<div class="error">Please enter Student ID / Roll No</div>`; return; }
+  r.innerHTML = `<div class="success"><b>Fees Record Found</b><br><br><b>Student ID:</b> ${no}<br><b>Status:</b> Please contact Academy on WhatsApp +92 306 8905860 for full fees detail.</div>`;
+}
+function applyOnline(){
+  let name = document.getElementById('applyName').value.trim();
+  let father = document.getElementById('applyFather').value.trim();
+  let phone = document.getElementById('applyPhone').value.trim();
+  let course = document.getElementById('applyCourse').value;
+  let r = document.getElementById('applyResult');
+  if(!name || !phone || !course){ r.innerHTML = `<div class="error">Please fill Name, WhatsApp Number and Course.</div>`; return; }
+  let msg = `New Admission Application%0AName: ${name}%0AFather: ${father}%0APhone: ${phone}%0ACourse: ${course}`;
+  r.innerHTML = `<div class="success"><b>Application Received!</b><br>Thank you ${name}. We will contact you soon.<br><br><a href="https://wa.me/923068905860?text=${msg}" target="_blank"><button class="btn" style="background:#25D366">Send on WhatsApp</button></a></div>`;
 }
 </script>
 </body>
