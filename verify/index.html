@@ -6,17 +6,35 @@
 <title>Certificate</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{width:100%;height:100%;background:#fff;overflow:hidden}
+  html,body{width:100%;height:100%;background:#222;overflow:hidden}
+  #wrap{width:100%;height:100%;position:relative}
   iframe{width:100%;height:100%;border:0;display:block}
+  /* Upar wali patti ko block karne ke liye transparent cover */
+  #blockTop{position:absolute;top:0;left:0;right:0;height:45px;z-index:10;background:transparent}
+  #blockRight{position:absolute;top:0;right:0;width:60px;height:45px;z-index:11;background:transparent}
 </style>
 </head>
-<body>
-<iframe id="pdf" src=""></iframe>
+<body oncontextmenu="return false">
+<div id="wrap">
+  <div id="blockTop"></div>
+  <div id="blockRight"></div>
+  <iframe id="pdf" src=""></iframe>
+</div>
 <script>
   const id = new URLSearchParams(window.location.search).get('id');
   if(id){
-    document.getElementById('pdf').src = '../certificates/' + encodeURIComponent(id) + '.pdf';
+    // toolbar=0 se download/print/edit buttons chhup jayenge
+    document.getElementById('pdf').src = '../certificates/' + encodeURIComponent(id) + '.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
   }
+  // Right click, Ctrl+S, Ctrl+P, Ctrl+U band
+  document.addEventListener('keydown', function(e){
+    if((e.ctrlKey || e.metaKey) && ['s','p','u','a'].includes(e.key.toLowerCase())){
+      e.preventDefault();
+      return false;
+    }
+    if(e.key === 'F12'){ e.preventDefault(); return false; }
+  });
+  document.addEventListener('contextmenu', e => e.preventDefault());
 </script>
 </body>
 </html>
